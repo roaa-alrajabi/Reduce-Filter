@@ -20,8 +20,16 @@ and return average age of this array
 
 Ex: avgAge(persons) => 41.2
 */
+function avgAge(arr){
 
+  var result = arr.reduce(function(acc,element){
+   
+ return    (acc+(element.age))
 
+  },0); 
+
+return result/(arr.length)
+}
 /*
 2
 Using the varabile persons
@@ -31,7 +39,17 @@ and return the longerst full name
 
 Ex: longestName(persons) => 'Soso Al-Amora'
 */
-
+function longestName(arr){
+  var large=0
+var result = arr.reduce(function(acc,element){
+if(large<(element.name.first+element.name.last).length)
+{
+        large=(element.name.first+element.name.last).length
+       return  acc= (element.name.first+"  " +element.name.last)
+}
+});
+return result
+}
 
 /*
 3
@@ -41,7 +59,17 @@ and return max number
 
 Ex: maxNumber([1,2,4,9]) => 9
 */
-
+function maxNumber(arr){
+  large=arr[0]
+  var result = arr.reduce(function(acc,element){
+     if(large<element)
+     {
+       large=element
+       return acc=element
+     }
+  });
+  return result 
+}
 
 /*
 4
@@ -51,7 +79,15 @@ and return number times that this char repeat inside the string
 
 Ex: repeatChar("hello world",w) => 1
 */
-
+function repeatChar(str,char){
+  var arr=str.split("");
+var result= arr.reduce(function(acc,element){
+   if(element===char)
+   acc++
+   return  acc   
+},0);
+return result
+}
 
 /*
 5
@@ -62,8 +98,18 @@ and return array of these two numbers and the numbers between them
 Ex: usAndNumberBeetweenUs(2,5) => [2,3,4,5]
 */
 
-
-
+function usAndNumberBeetweenUs(num1,num2){
+  debugger
+ var arr=[]
+while (num1<=num2)
+{
+  arr.push(arr.reduce(function(acc,element){
+  return acc
+},num1))
+num1++
+}
+return arr;
+}
 
 
 
